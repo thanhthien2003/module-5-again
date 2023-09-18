@@ -50,7 +50,7 @@ function ShowList() {
             </thead>
             <tbody>
                 {listBlog.map((blog,index) => (
-                    <tr class="table-success" key={index}>
+                    <tr className="table-success" key={index}>
                         <td>{blog.title}</td>
                         <td>{blog.slug}</td>
                         <td>{blog.category}</td>
