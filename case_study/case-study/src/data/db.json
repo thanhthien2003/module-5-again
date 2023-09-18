@@ -1,0 +1,88 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "Thien",
+      "gender": true,
+      "citizenId": 123456789,
+      "phone": 123456789,
+      "email": "thien@gmail.com",
+      "typeOfCustomer": "gold",
+      "address": "123 Nguyen Van Linh"
+    },
+    {
+      "name": "Thanh Thien",
+      "gender": "",
+      "citizenId": "23324233",
+      "phone": "0905010738",
+      "email": "awdawdawd@adwwad",
+      "typeOfCustomer": "Member",
+      "address": "Quan An",
+      "id": 2
+    },
+    {
+      "name": "awd",
+      "gender": "true",
+      "citizenId": "0dawawd",
+      "phone": "0awdawd",
+      "email": "awd@awdawd",
+      "typeOfCustomer": "Member",
+      "address": "awdadw",
+      "id": 3
+    },
+    {
+      "name": "awd",
+      "gender": "true",
+      "citizenId": "0awd",
+      "phone": "0awdad",
+      "email": "awd@adwd",
+      "typeOfCustomer": "Member",
+      "address": "awd",
+      "id": 4
+    },
+    {
+      "name": "daw",
+      "gender": "true",
+      "citizenId": "02323",
+      "phone": "3121312",
+      "email": "dawda@adawd",
+      "typeOfCustomer": "Member",
+      "address": "daw",
+      "id": 5
+    }
+  ] ,
+  "contract": [
+    {
+      "id" : 1,
+      "contractKey":123456,
+      "dayStart": "12/12/2003",
+      "dayEnd": "01/01/2004",
+      "downPayment":25000,
+      "totalAmount":50000
+    },
+    {
+      "id" : 2,
+      "contractKey":123444,
+      "dayStart": "12/12/2003",
+      "dayEnd": "01/01/2004",
+      "downPayment":25000,
+      "totalAmount":50000
+    },
+    {
+      "id" : 3,
+      "contractKey":123456,
+      "dayStart": "12/12/2003",
+      "dayEnd": "01/01/2004",
+      "downPayment":25000,
+      "totalAmount":50000
+    },
+    {
+      "id" : 4,
+      "contractKey":123456,
+      "dayStart": "12/12/2003",
+      "dayEnd": "01/01/2004",
+      "downPayment":25000,
+      "totalAmount":50000
+    }
+  ]
+}
