@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import ListContract from './components/ListContract'
-import Home from './components/Home';
-import ListService from './components/ListService';
-import ListCustomer from './components/ListCustomer';
-import CreateContact from './components/CreateContact';
-import CreateCustomer from './components/CreateCustomer';
+import ListContract from './components/contact/ListContract'
+import Home from './components/simple/Home';
+import ListService from './components/services/ListService';
+import ListCustomer from './components/customer/ListCustomer';
+import CreateContact from './components/contact/CreateContact';
+import CreateCustomer from './components/customer/CreateCustomer';
 function App() {
   return (
     <>

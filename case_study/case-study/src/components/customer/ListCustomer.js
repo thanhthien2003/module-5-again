@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Header from "./Header";
-import Footer from "./Footer";
-import buttonCreate from "../css/buttonCreate.css";
-import { getAll } from "../service/CustomerService";
+import Header from "../simple/Header";
+import Footer from "../simple/Footer";
+import {getAll} from "../../service/CustomerService";
 
 function ListCustomer() {
   const [customerList, setCustomerList] = useState([]);

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import Header from "./Header";
-import Footer from "./Footer";
-import { getAllContract } from "../service/ContractService";
+
+import Header from "../simple/Header";
+import Footer from "../simple/Footer";
+import {getAllContract} from "../../service/ContractService";
 
 function ListContract() {
     const [contractList, setContractList] = useState([]);

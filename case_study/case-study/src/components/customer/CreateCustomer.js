@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.css";
 import { Formik, ErrorMessage, Field, Form } from "formik"
 import * as Yup from "yup"
 import { useNavigate } from "react-router-dom";
-import { createCustomer } from "../service/CustomerService";
+import {createCustomer} from "../../service/CustomerService";
+
 
 
 

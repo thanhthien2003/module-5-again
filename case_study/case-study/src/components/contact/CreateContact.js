@@ -1,11 +1,12 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../simple/Header";
+import Footer from "../simple/Footer";
+
 
 function CreateContact() {
 
     return (
-      <>
+        <>
       <Header />
       <div>
           <div className="back_re">
@@ -58,9 +59,8 @@ function CreateContact() {
             </div>
           </div>
         </div>
-      <Footer/>
+        <Footer/>
       </>
-        
       );
 }
 export default CreateContact;
