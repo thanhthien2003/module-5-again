@@ -65,15 +65,15 @@ function Postlist() {
     }
 
     const getPost = (id) => {
-        for (let i = 0; i < list.length; i++) {
-            if (list[i].id === id) {
-                setTitle(list[i].title);
-                setCategory(list[i].category);
-                setContent(list[i].content);
+        list.forEach((element) => {
+            if(element.id===id){
+                setTitle(element.title);
+                setCategory(element.category);
+                setContent(element.content);
                 setId(id);
-                break
             }
-        }
+            return element;
+        })
     }
 
     const createPost = () => {
@@ -98,13 +98,9 @@ function Postlist() {
     }
 
     const deletePost = (id) => {
-        const newList = [...list];
-        for (let i = 0;i<newList.length;i++) {
-            if(id===newList[i].id){
-                newList.splice(i,1);
-                break;
-            }
-        }
+        const newList = list.filter((element)=>{
+            return element.id !== id
+        })
         setList(newList);
     }
 
@@ -118,30 +114,25 @@ function Postlist() {
             return;
         }
         const date = new Date();
-        const newPost = {
-            "id": id,
-            "title": title,
-            "slug": title.replace(" ", "-").toLowerCase(),
-            "category": category,
-            "content": content,
-            "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
-        }
-        const newList = [...list];
         let flag = false;
-        for (let i = 0; i < newList.length; i++) {
-            if (newList[i].id === id) {
-                newList[i] = {
-                    "id": id,
-                    "title": title,
-                    "slug": title.replace(" ", "-").toLowerCase(),
-                    "category": category,
-                    "content": content,
-                    "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
-                };
+        const newList = list.map((element) => {
+            if(element.id===id){
                 flag = true;
-                setId(-1);
+                setId(0);
+                return(
+                    {
+                        "id": id,
+                        "title": title,
+                        "slug": title.replace(" ", "-").toLowerCase(),
+                        "category": category,
+                        "content": content,
+                        "updatedAt": date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear(),
+                    }
+                )
+            } else {
+                return element;
             }
-        }
+        })
         if (flag) {
             setList(newList);
         } else {
