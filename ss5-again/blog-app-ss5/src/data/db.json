@@ -1,0 +1,58 @@
+{
+  "blog": [
+    {
+      "id": 1,
+      "title": "Golead",
+      "category": {
+        "id": 1,
+        "body": "diamond"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Aclead",
+      "category": {
+        "id": 2,
+        "body": "gold"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Lomad",
+      "category": {
+        "id": 1,
+        "body": "diamond"
+      }
+    },
+    {
+      "title": "adw",
+      "category": {
+        "id": "",
+        "body": ""
+      },
+      "id": 4
+    },
+    {
+      "title": "vawvavsv",
+      "category": {
+        "id": "",
+        "body": ""
+      },
+      "id": 5
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "body": "diamond"
+    },
+    {
+      "id": 2,
+      "body": "gold"
+    },
+    {
+      "id": 3,
+      "body": "sliver"
+    }
+  ]
+}

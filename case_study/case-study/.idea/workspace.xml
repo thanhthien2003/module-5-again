@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59c9dbc5-b72c-46fd-9a45-4facb8b14ed5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateContact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateCustomer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditCustomer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/EditService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListContract.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListCustomer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ListService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="59c9dbc5-b72c-46fd-9a45-4facb8b14ed5" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,6 +34,7 @@
       <updated>1692937365649</updated>
       <workItem from="1692937370253" duration="22000" />
       <workItem from="1695271816760" duration="1281000" />
+      <workItem from="1695283583053" duration="2000" />
     </task>
     <servers />
   </component>
