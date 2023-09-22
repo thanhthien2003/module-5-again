@@ -7,45 +7,55 @@ import { createBlog } from "../service/BlogService";
 
 function CreateBlog() {
     const navigate = useNavigate();
-    const [categoryList, setCategoryList] = useState([]);
-    const handleGetCategoryList = async () => {
-        setCategoryList(await getAllCategory());
-    }
-    const handleCreate = async (newBLog) => {
-        await createBlog(newBLog);
-        navigate("/");
-    }
+    const [categoryList, setCategoryList] = useState();
+
     useEffect(() => {
         handleGetCategoryList();
-    }, [])
+    
+   }, [])
+   
+    const handleGetCategoryList = async () => {
+    
+        setCategoryList(await getAllCategory());
+       
+    }
+    const handleCreate = async (newBLog) => {
+        try {
+            console.log(newBLog);
+            newBLog.category = JSON.parse(newBLog.category);
+            await createBlog(newBLog);
+            navigate("/");
+          } catch (error) {
+            console.error("Error parsing JSON:", error);
+          }
+    }
+   
 
     return (
         <>
+        {!categoryList ? "": 
             <Formik
                 initialValues={{
                     title: "",
-                    category: {
-                        id: "",
-                        body: ""
-                    }
+                    category: JSON.stringify(categoryList[0])
                 }}
 
                 validationSchema={Yup.object({
                     title: Yup.string().required("cant required")
                 })}
 
-                onSubmit={async (value) => {
-                    await handleCreate(value);
+                onSubmit={ (value) => {
+                     handleCreate(value);
                 }}
             >
                 <Form>
                     Title:  <Field name="title" type="text" />
                     <ErrorMessage name="title" component="span" />
-                    Category: <select name="category">
-                        {categoryList.map((element, index) => (
-                            <option key={index} value={{element}}>{element.body}</option>
+                    Category: <Field name="category" as="select">
+                        {categoryList.map((element) => (
+                            <option key={element.id} value={JSON.stringify(element)}>{element.body}</option>
                         ))}
-                    </select>
+                    </Field>
                     <ErrorMessage name="category" component="span" />
                     <br>
                     </br>
@@ -53,6 +63,7 @@ function CreateBlog() {
                     <button type="submit" className="btn btn-primary">Submit</button>
                 </Form>
             </Formik>
+}
         </>
     )
 }
