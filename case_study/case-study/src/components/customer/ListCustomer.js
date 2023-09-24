@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Header from "../simple/Header";
 import Footer from "../simple/Footer";
 import {getAll} from "../../service/CustomerService";
+import { Link } from "react-router-dom";
 
 function ListCustomer() {
   const [customerList, setCustomerList] = useState([]);
@@ -21,7 +22,7 @@ function ListCustomer() {
       <Header />
       <div className="row">
         <a href="/customer/create">
-          <button class="btn-customer">
+          <button class="btn btn-primary">
             Create Customer
           </button>
         </a>
@@ -54,7 +55,7 @@ function ListCustomer() {
               <td>{customer.typeOfCustomer}</td>
               <td>{customer.address}</td>
               <td>
-                <a className="btn btn-primary" href="editCustomer.html"><i className="fa-regular fa-pen-to-square" /></a>
+                <Link className="btn btn-primary" to={`edit/${customer.id}`}><i className="fa-regular fa-pen-to-square" /></Link>
               </td>
               <td>
                 <a>

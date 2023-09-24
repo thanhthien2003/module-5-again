@@ -113,7 +113,7 @@ function CreateCustomer() {
                                 </div>
                                 <div>
                                     <button className="formbold-btn" type="submit">
-                                        Send Message
+                                        Create new
                                     </button>
                                 </div>
                             </div>
