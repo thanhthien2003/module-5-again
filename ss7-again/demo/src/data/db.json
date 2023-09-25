@@ -1,0 +1,49 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "gender": 1,
+      "languages": [
+        "C#",
+        "JAVA"
+      ]
+    },
+    {
+      "name": "HaiTT",
+      "age": 18,
+      "gender": 1,
+      "languages": [
+        "C#",
+        "Java",
+        "ReactJS"
+      ],
+      "classroom": {
+        "id": 1,
+        "name": "C0523G1"
+      },
+      "id": 2
+    },
+    {
+      "name": "TienNVT",
+      "age": 25,
+      "gender": 1,
+      "languages": [
+        "C#",
+        "Java",
+        "ReactJS"
+      ],
+      "id": 3
+    }
+  ],
+  "classrooms": [
+    {
+      "id": 1,
+      "name": "C0523G1"
+    },
+    {
+      "id": 2,
+      "name": "C0423G1"
+    }
+  ]
+}
