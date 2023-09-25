@@ -39,26 +39,6 @@
       "typeOfCustomer": "Member",
       "address": "awd",
       "id": 4
-    },
-    {
-      "name": "daw",
-      "gender": "true",
-      "citizenId": "02323",
-      "phone": "3121312",
-      "email": "dawda@adawd",
-      "typeOfCustomer": "Member",
-      "address": "daw",
-      "id": 5
-    },
-    {
-      "name": "banh mi",
-      "gender": "true",
-      "citizenId": "02323",
-      "phone": "0965702079",
-      "email": "minh@codegym.vnvv",
-      "typeOfCustomer": "Member",
-      "address": "awd",
-      "id": 6
     }
   ],
   "contract": [
@@ -93,6 +73,19 @@
       "dayEnd": "01/01/2004",
       "downPayment": 25000,
       "totalAmount": 50000
+    },
+    {
+      "contractKey": 34322,
+      "dayStart": "2023-09-24",
+      "dayEnd": "2023-10-08",
+      "downPayment": 1,
+      "totalAmount": 2,
+      "id": 5
+    }
+  ],
+  "service":[
+    {
+      
     }
   ]
 }

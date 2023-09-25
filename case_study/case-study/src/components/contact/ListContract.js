@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import Header from "../simple/Header";
 import Footer from "../simple/Footer";
 import {getAllContract} from "../../service/ContractService";
+import { Link, NavLink } from "react-router-dom";
 
 function ListContract() {
     const [contractList, setContractList] = useState([]);
@@ -17,6 +18,10 @@ function ListContract() {
     return (
         <>
             <Header />
+            <div>
+              <NavLink to={`/contract/create`} className="btn btn-primary">New Contract</NavLink>
+            </div>
+            <br/>
             <table className="table table-bordered">
                 <thead>
                     <tr>

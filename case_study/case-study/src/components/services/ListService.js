@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../simple/Header";
 import Footer from "../simple/Footer";
+import { getAllService } from "../../service/ServiceAxios";
 
 
 function ListService() {
+    const [listService,setListService] = useState([]);
+    const getListService = async () => {
+        setListService(await getAllService());
+    }
+
+    useEffect(()=>{
+        getListService();
+    },[])
     return (
         <>
         <Header/>

@@ -30,3 +30,10 @@ export const findByIdCustomer = async (id) => {
         return error;
     }
 } 
+export const deleteCustomer = async (id) => {
+    try {
+        return (await axios.delete(`http://localhost:8080/customer/${id}`));
+    } catch (error) {
+        return error;
+    }
+}

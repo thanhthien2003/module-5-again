@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "../simple/Header";
 import Footer from "../simple/Footer";
-import {getAll} from "../../service/CustomerService";
+import {deleteCustomer, getAll} from "../../service/CustomerService";
 import { Link } from "react-router-dom";
 
 function ListCustomer() {
@@ -11,6 +11,10 @@ function ListCustomer() {
     const newList = await getAll();
     console.log(newList);
     setCustomerList(newList);
+  }
+  const handleDelete = async (idDelete) => {
+      const res = await deleteCustomer(idDelete);
+      await getList();
   }
 
   useEffect(() => {
@@ -59,7 +63,7 @@ function ListCustomer() {
               </td>
               <td>
                 <a>
-                  <button className="btn btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#createFacilityModal">
+                  <button className="btn btn-danger" title="Delete" data-bs-toggle="modal" data-bs-target="#createFacilityModal" onClick={()=> handleDelete(customer.id)}>
                     <i className="fa-regular fa-trash-can" />
                   </button>
                 </a>
