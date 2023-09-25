@@ -9,36 +9,6 @@
       "email": "thien@gmail.com",
       "typeOfCustomer": "Gold",
       "address": "123 Nguddyen Van Linh"
-    },
-    {
-      "name": "Thanh Thien",
-      "gender": "",
-      "citizenId": "23324233",
-      "phone": "0905010738",
-      "email": "awdawdawd@adwwad",
-      "typeOfCustomer": "Member",
-      "address": "Quan An",
-      "id": 2
-    },
-    {
-      "name": "awd",
-      "gender": "true",
-      "citizenId": "0dawawd",
-      "phone": "0awdawd",
-      "email": "awd@awdawd",
-      "typeOfCustomer": "Member",
-      "address": "awdadw",
-      "id": 3
-    },
-    {
-      "name": "awd",
-      "gender": "true",
-      "citizenId": "0awd",
-      "phone": "0awdad",
-      "email": "awd@adwd",
-      "typeOfCustomer": "Member",
-      "address": "awd",
-      "id": 4
     }
   ],
   "contract": [
@@ -83,9 +53,7 @@
       "id": 5
     }
   ],
-  "service":[
-    {
-      
-    }
+  "service": [
+    {}
   ]
 }
