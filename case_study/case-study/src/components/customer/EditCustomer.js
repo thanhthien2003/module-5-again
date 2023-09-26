@@ -4,20 +4,28 @@ import { Formik, ErrorMessage, Field, Form } from "formik"
 import * as Yup from "yup"
 import { useNavigate, useParams } from "react-router-dom";
 import { findByIdCustomer, updateCustomer } from "../../service/CustomerService";
+import { getAllType } from "../../service/TypeOfCustomerService";
 
 function EditCustomer() {
     const [customer,setCustomer] = useState(null);
     const param = useParams();
     const navigate = useNavigate();
+    const [typeList, setTypeList] = useState([]);
     const getCustomerById = async () => {
            setCustomer(await findByIdCustomer(param.id));
     }
     const editCustomer = async (customer) => {
+        customer.typeOfCustomer = JSON.parse(customer.typeOfCustomer);
         await updateCustomer(customer);
     }
-
+    const getTypeList = async () => {
+        const res = await getAllType();
+        console.log(res);
+        setTypeList(res);
+    }
     useEffect(() => {
-        getCustomerById()
+        getTypeList();
+        getCustomerById();
     },[])
 
     if(customer === null){
@@ -26,7 +34,10 @@ function EditCustomer() {
     return (
         <>
             <Formik
-                initialValues={customer}
+                initialValues={{
+                    ...customer,
+                    typeOfCustomer : JSON.stringify(customer.typeOfCustomer)
+                }}
                 validationSchema={Yup.object({
                     name: Yup.string().required("khong duoc de trong").matches(/[\w]{2,}( [\w]{2,})+/i,"ten khong hop le"),
                     citizenId: Yup.number().required("khong duoc de trong").moreThan(9),
@@ -93,12 +104,12 @@ function EditCustomer() {
                                 </div>
                                 <div>
                                     <label className="formbold-form-label"> type of customer </label>
-                                    <Field as="select" type="select" name="typeOfCustomer" value={customer.typeOfCustomer}>
-                                        <option value="Diamond">Diamond</option>
-                                        <option value="Platinium">Platinium</option>
-                                        <option value="Gold">Gold</option>
-                                        <option value="Silver">Silver</option>
-                                        <option value="Member">Member</option>
+                                    <Field as="select" name="typeOfCustomer">
+                                        {typeList.map((type) => {
+                                            return (
+                                                <option value={JSON.stringify(type)}>{type.name}</option>
+                                            )
+                                        })}
                                     </Field>
                                 </div>
                                 <br />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "../simple/Header";
 import Footer from "../simple/Footer";
-import {deleteCustomer, getAll} from "../../service/CustomerService";
+import {deleteCustomer, findAllForName, getAll} from "../../service/CustomerService";
 import { Link } from "react-router-dom";
 import { Button, Modal } from "react-bootstrap";
 
@@ -10,6 +10,13 @@ function ListCustomer() {
   const [customerList, setCustomerList] = useState([]);
   const [showModal,setShowModal] = useState(false);
   const [customerDelete,setCustomerDelete] = useState({id:-1,name:""});
+  const limit = 5;
+  const [currentPage,setCurrentPage] = useState(1);
+  const [records,setRecords] = useState();
+  const [totalPage,setTotalPage] = useState();
+  const [searchName,setSearchName] = useState("");
+  const [refresh,setRefresh] = useState(true);
+
   const handleShowModal = (obj) => {
     setShowModal(true);
     setCustomerDelete(obj);
@@ -19,11 +26,36 @@ function ListCustomer() {
     setShowModal(false);
     setCustomerDelete({});
   }
-  const getList = async () => {
-    const newList = await getAll();
-    console.log(newList);
-    setCustomerList(newList);
+  const getList = async (page,nameSearch) => {
+    // const newList = await getAll();
+    // console.log(newList);
+    // setCustomerList(newList);
+
+    const newList = await findAllForName(page,limit,nameSearch);
+    console.log("new list ",newList);
+    setCustomerList(newList[0]);
+    setRecords(newList[1]);
+    console.log(newList[2]);
+    setTotalPage(Math.ceil(newList[1]/limit));
   }
+
+    const prePage = () => {
+      setCurrentPage(currentPage-1);
+      setRefresh(!refresh);
+    }
+
+    const nextPage = () => {
+      if(currentPage<totalPage){
+        setCurrentPage(currentPage+1);
+        setRefresh(!refresh);
+      }
+    }
+
+    const handleSearch = () => {
+      setCurrentPage(1);
+      getList(currentPage,searchName);
+      setRefresh(!refresh)
+    }
    const handleDelete = async () => {
       const res = await deleteCustomer(customerDelete.id);
       await getList();
@@ -31,8 +63,8 @@ function ListCustomer() {
   }
 
   useEffect(() => {
-    getList();
-  }, [])
+    getList(currentPage,searchName);
+  }, [refresh])
 
   return (
     <>
@@ -43,6 +75,10 @@ function ListCustomer() {
             Create Customer
           </button>
         </a>
+      </div>
+      <div>
+        <input onChange={(event) => setSearchName(event.target.value) } placeholder="SEARCH"/>
+        <button className="btn btn-primary" onClick={handleSearch}>Search</button>
       </div>
       <table className="table table-bordered">
         <thead>
@@ -69,7 +105,7 @@ function ListCustomer() {
               <td>{customer.citizenId}</td>
               <td>{customer.phone}</td>
               <td>{customer.email}</td>
-              <td>{customer.typeOfCustomer}</td>
+              <td>{customer.typeOfCustomer.name}</td>
               <td>{customer.address}</td>
               <td>
                 <Link className="btn btn-primary" to={`edit/${customer.id}`}><i className="fa-regular fa-pen-to-square" /></Link>
@@ -89,6 +125,19 @@ function ListCustomer() {
           })}
         </tbody>
       </table>
+
+     <div style={{ whiteSpace: 'nowrap' }}>
+  <div style={{ display: 'inline-block', marginRight: '10px' }}>
+    <button onClick={() => prePage()} className={`btn btn-primary ${currentPage <= 1 ? "disabled" : ""}`}>
+      Previous
+    </button>
+  </div>
+  <div style={{ display: 'inline-block' }}>
+    <button onClick={() => nextPage()} className={`btn btn-primary ${currentPage >= totalPage ? "disabled" : ""}`}>
+      Next
+    </button>
+  </div>
+</div>
       <Footer />
     </>
   )

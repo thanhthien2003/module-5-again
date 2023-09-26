@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Formik, ErrorMessage, Field, Form } from "formik"
 import * as Yup from "yup"
 import { useNavigate } from "react-router-dom";
-import {createCustomer} from "../../service/CustomerService";
+import { createCustomer } from "../../service/CustomerService";
+import { getAllType } from "../../service/TypeOfCustomerService";
 
 
 
@@ -11,9 +12,19 @@ import {createCustomer} from "../../service/CustomerService";
 
 function CreateCustomer() {
     const navigate = useNavigate();
+    const [typeList, setTypeList] = useState([]);
     const addCustomer = async (customer) => {
+        customer.typeOfCustomer = JSON.parse(customer.typeOfCustomer);
         await createCustomer(customer);
     }
+    const getTypeList = async () => {
+        const res = await getAllType();
+        console.log(res);
+        setTypeList(res);
+    }
+    useEffect(() => {
+        getTypeList();
+    }, [])
 
     return (
         <>
@@ -25,14 +36,14 @@ function CreateCustomer() {
                         citizenId: 0,
                         phone: 0,
                         email: '',
-                        typeOfCustomer: 'Member',
+                        typeOfCustomer: JSON.stringify(typeList[0]),
                         address: ''
                     }
                 }
                 validationSchema={Yup.object({
-                    name: Yup.string().required("khong duoc de trong").matches(/[\w]{2,}( [\w]{2,})+/i,"ten khong hop le"),
+                    name: Yup.string().required("khong duoc de trong").matches(/[\w]{2,}( [\w]{2,})+/i, "ten khong hop le"),
                     citizenId: Yup.number().required("khong duoc de trong").moreThan(9),
-                    phone: Yup.string().required("khong duoc de trong").matches(/^(84|0[3|5|7|8|9])+([0-9]{8})\b$/,"so dien thoai khong hop le"),
+                    phone: Yup.string().required("khong duoc de trong").matches(/^(84|0[3|5|7|8|9])+([0-9]{8})\b$/, "so dien thoai khong hop le"),
                     email: Yup.string().required("khong duoc de trong").email("khong dung dinh dang email"),
                     address: Yup.string().required("khong duoc de trong")
 
@@ -95,13 +106,13 @@ function CreateCustomer() {
                                 </div>
                                 <div>
                                     <label className="formbold-form-label"> type of customer </label>
-                                    <select type="select" name="typeOfCustomer">
-                                        <option value="Diamond">Diamond</option>
-                                        <option value="Platinium">Platinium</option>
-                                        <option value="Gold">Gold</option>
-                                        <option value="Silver">Silver</option>
-                                        <option value="Member">Member</option>
-                                    </select>
+                                    <Field as="select" name="typeOfCustomer">
+                                        {typeList.map((type) => {
+                                            return (
+                                                <option value={JSON.stringify(type)}>{type.name}</option>
+                                            )
+                                        })}
+                                    </Field>
                                 </div>
                                 <br />
                                 <div className="formbold-flex">

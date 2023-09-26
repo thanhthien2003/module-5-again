@@ -2,13 +2,103 @@
   "customer": [
     {
       "id": 1,
-      "name": "Thanh Thien",
+      "name": "Thanh Thien1",
       "gender": "true",
       "citizenId": 123456789,
       "phone": "0905010738",
       "email": "thien@gmail.com",
-      "typeOfCustomer": "Gold",
+      "typeOfCustomer": {
+        "id": 1,
+        "name": "Diamond"
+      },
       "address": "123 Nguddyen Van Linh"
+    },
+    {
+      "id": 2,
+      "name": "Thanh Thien2",
+      "gender": "true",
+      "citizenId": 123456789,
+      "phone": "0905010738",
+      "email": "thien@gmail.com",
+      "typeOfCustomer": {
+        "id": 2,
+        "name": "Platinium"
+      },
+      "address": "123 Nguddyen Van Linh"
+    },
+    {
+      "id": 3,
+      "name": "Thanh Thien3",
+      "gender": "true",
+      "citizenId": 123456789,
+      "phone": "0905010738",
+      "email": "thien@gmail.com",
+      "typeOfCustomer": {
+        "id": 3,
+        "name": "Gold"
+      },
+      "address": "123 Nguddyen Van Linh"
+    },
+    {
+      "id": 4,
+      "name": "Thanh Thien4",
+      "gender": "true",
+      "citizenId": 123456789,
+      "phone": "0905010738",
+      "email": "thien@gmail.com",
+      "typeOfCustomer": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "address": "123 Nguddyen Van Linh"
+    },
+    {
+      "id": 5,
+      "name": "Thanh Thien5",
+      "gender": "true",
+      "citizenId": 123456789,
+      "phone": "0905010738",
+      "email": "thien@gmail.com",
+      "typeOfCustomer": {
+        "id": 5,
+        "name": "Member"
+      },
+      "address": "123 Nguddyen Van Linh"
+    },
+    {
+      "name": "Thanh Thien",
+      "gender": "true",
+      "citizenId": "012345678",
+      "phone": "0905010738",
+      "email": "minh@codegym.vnvvv",
+      "typeOfCustomer": {
+        "id": 5,
+        "name": "Member"
+      },
+      "address": "Quan An",
+      "id": 6
+    }
+  ],
+  "typeOfCustomer": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinium"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
     }
   ],
   "contract": [
