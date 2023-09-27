@@ -1,8 +1,11 @@
 import axios from "axios";
 
-export const getAllContract = async () => {
+export const getAllContract = async (page,limit) => {
     try {
-        return (await axios.get("http://localhost:8080/contract")).data;
+        const res = await axios.get(`http://localhost:8080/contract?_page=${page}&_limit=${limit}`);
+        const records = res.headers.get("x-total-count");
+        const data = res.data;
+        return [records,data];
     } catch (error) {
         return error;
     }
