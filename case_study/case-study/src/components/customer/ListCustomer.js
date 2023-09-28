@@ -9,14 +9,12 @@ import { Button, Modal } from "react-bootstrap";
 function ListCustomer() {
   const [customerList, setCustomerList] = useState([]);
   const [showModal,setShowModal] = useState(false);
-  const [customerDelete,setCustomerDelete] = useState({id:-1,name:""});
+  const [customerDelete,setCustomerDelete] = useState();
   const limit = 5;
-  const [currentPage,setCurrentPage] = useState(1);
-  const [records,setRecords] = useState();
+  const [currentPage,setCurrentPage] = useState(0);
   const [totalPage,setTotalPage] = useState();
   const [searchName,setSearchName] = useState("");
   const [refresh,setRefresh] = useState(true);
-
   const handleShowModal = (obj) => {
     setShowModal(true);
     setCustomerDelete(obj);
@@ -27,16 +25,13 @@ function ListCustomer() {
     setCustomerDelete({});
   }
   const getList = async (page,nameSearch) => {
-    // const newList = await getAll();
-    // console.log(newList);
-    // setCustomerList(newList);
-
     const newList = await findAllForName(page,limit,nameSearch);
-    console.log("new list ",newList);
+    console.log( "currenpage"+currentPage);
     setCustomerList(newList[0]);
-    setRecords(newList[1]);
     console.log(newList[2]);
     setTotalPage(Math.ceil(newList[1]/limit));
+    console.log("totalPage"+ totalPage);
+    console.log("data" + newList[0]);
   }
 
     const prePage = () => {
@@ -45,20 +40,20 @@ function ListCustomer() {
     }
 
     const nextPage = () => {
-      if(currentPage<totalPage){
+      const totalReal = totalPage-1;
+      if(currentPage<totalReal){
         setCurrentPage(currentPage+1);
         setRefresh(!refresh);
       }
     }
 
     const handleSearch = () => {
-      setCurrentPage(1);
-      getList(currentPage,searchName);
+      setCurrentPage(0);
       setRefresh(!refresh)
     }
    const handleDelete = async () => {
       const res = await deleteCustomer(customerDelete.id);
-      await getList();
+      setRefresh(!refresh);
       handleCloseModal();
   }
 
@@ -128,12 +123,12 @@ function ListCustomer() {
 
      <div style={{ whiteSpace: 'nowrap' }}>
   <div style={{ display: 'inline-block', marginRight: '10px' }}>
-    <button onClick={() => prePage()} className={`btn btn-primary ${currentPage <= 1 ? "disabled" : ""}`}>
+    <button onClick={() => prePage()} className={`btn btn-primary ${currentPage <= 0 ? "disabled" : ""}`}>
       Previous
     </button>
   </div>
   <div style={{ display: 'inline-block' }}>
-    <button onClick={() => nextPage()} className={`btn btn-primary ${currentPage >= totalPage ? "disabled" : ""}`}>
+    <button onClick={() => nextPage()} className={`btn btn-primary ${currentPage >= (totalPage-1) ? "disabled" : ""}`}>
       Next
     </button>
   </div>

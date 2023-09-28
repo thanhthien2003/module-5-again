@@ -24,9 +24,9 @@ export const findByIdContract = async (idContract) => {
         return error;
     }
 }
-export const updateContract = async (idUpdate,contract) => {
+export const updateContract = async (contract) => {
     try {
-        return (await axios.put(`http://localhost:8080/contract/${idUpdate}`,contract))
+        return (await axios.put(`http://localhost:8080/contract/${contract.id}`,contract))
     } catch (error) {
         return error;
     }
