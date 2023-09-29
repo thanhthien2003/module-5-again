@@ -1,50 +1,48 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
-import { useNavigate, useParams } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Form, Formik, Field, ErrorMessage } from 'formik';
+import { createService } from '../../service/FacilityService';
 import * as Yup from 'yup'
-import { useEffect, useState } from "react";
-import { findByIdService, updateService } from "../../service/FacilityService";
-
-function EditFacility() {
+import Header from '../simple/Header';
+import Footer from '../simple/Footer';
+function CreateHouse() {
   const navigate = useNavigate();
-  const param = useParams();
-  const [facilityEdit, setfacilityEdit] = useState(null)
-  const getFacility = async () => {
-    const res = await findByIdService(param.id)
-    setfacilityEdit(res);
-  }
-  const editFacilitys = async (value) => {
-    await updateService(value)
+  const addHouse = async (value) => {
+    await createService(value)
     navigate("/service")
-  }
-  console.log(facilityEdit);
-  useEffect(() => {
-    getFacility()
-  }, [param])
-  if (facilityEdit == null) {
-    return null
-  }
-  return (
-    <div>
+  } 
+    return (
+      <div>
+        <Header></Header>
       <Formik
-        initialValues={facilityEdit}
+        initialValues={{
+          serviceName: "Vila",
+          area: "",
+          rentalCost: "",
+          maxCapacity: "",
+          roomStandaard: "",
+          amenities: "",
+          floors: "",
+          rentalType: "",
+          img: ""
+        }}
         validationSchema={Yup.object({
           area: Yup.number()
-            .required("Area cannot is empty")
-            .min(1, "Area should more than 0!"),
-          rentalCost: Yup.string().required("Rental cost cannot is empty"),
-          maxCapacity: Yup.string().required("Capacity cannot is empty"),
-          poolArea: Yup.number().required("Pool Area cannot is empty!")
-            .min(1, "Pool area > 0 !"),
+            .required("Area can not empty")
+            .min(1, "Area more than 0!"),
+          rentalCost: Yup.string().required("Rental cost can not empty"),
+          maxCapacity: Yup.string().required("Capacity can not empty"),
           floors: Yup.number()
             .required("Floors cannot is empty")
             .min(1, "Floors should geather than 0!")
         })}
         onSubmit={(values) => {
-          editFacilitys(values)
+          addHouse(values)
         }}>
         <div className="container px-5 my-5">
           <Form id="contactForm" data-sb-form-api-token="API_TOKEN">
             <div className="form-floating mb-3">
+
               <Field
                 className="form-control"
                 id="area"
@@ -112,19 +110,6 @@ function EditFacility() {
 
               <Field
                 className="form-control"
-                id="poolArea"
-                name="poolArea"
-                type="text"
-                placeholder="Pool Area"
-                data-sb-validations=""
-              />
-              <ErrorMessage className="text-danger" name="poolArea" component='span'></ErrorMessage>
-              <label htmlFor="poolArea">Pool Area</label>
-            </div>
-            <div className="form-floating mb-3">
-
-              <Field
-                className="form-control"
                 id="floors"
                 name="floors"
                 type="text"
@@ -184,7 +169,9 @@ function EditFacility() {
           </Form>
         </div>
       </Formik>
+      <Footer />
     </div>
-  )
+    );
 }
-export default EditFacility;
+
+export default CreateHouse;

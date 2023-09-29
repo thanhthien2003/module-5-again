@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="59c9dbc5-b72c-46fd-9a45-4facb8b14ed5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../ss5-again/blog-app-ss5/src/components/CreateBlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5-again/blog-app-ss5/src/components/CreateBlog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ss5-again/blog-app-ss5/src/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../ss5-again/blog-app-ss5/src/data/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/service/TypeFacilityService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/contact/ListContract.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/contact/ListContract.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/customer/ListCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/customer/ListCustomer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/services/ListService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/services/ListService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/ServiceAxios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/FacilityService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -23,7 +53,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ss5-again/blog-app-ss5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -39,11 +69,23 @@
       <workItem from="1695271816760" duration="1281000" />
       <workItem from="1695283583053" duration="2000" />
       <workItem from="1695370064238" duration="23000" />
+      <workItem from="1695889486840" duration="2248000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1695370085031">

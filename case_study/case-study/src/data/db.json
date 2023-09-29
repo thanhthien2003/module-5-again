@@ -189,25 +189,52 @@
       "downPayment": 23,
       "totalAmount": 2344,
       "id": 11
-    },
-    {
-      "contractKey": 2334454,
-      "dayStart": "2023-10-08",
-      "dayEnd": "2023-09-17",
-      "downPayment": 23,
-      "totalAmount": 2344,
-      "id": 12
-    },
-    {
-      "contractKey": 2334454,
-      "dayStart": "2023-10-08",
-      "dayEnd": "2023-09-17",
-      "downPayment": 3000,
-      "totalAmount": 2344,
-      "id": 13
     }
   ],
-  "service": [
-    {}
+  "facility": [
+    {
+      "id": 1,
+      "serviceName": "Room",
+      "area": 548,
+      "rentalCost": 1000000,
+      "maxCapacity": 2,
+      "rentalType": "Giờ",
+      "roomStandard": "",
+      "amenities": "",
+      "poolArea": 12,
+      "floors": 1,
+      "freeServices": "Wifi",
+      "renalType": "year",
+      "img": "https://themewagon.github.io/seapalace/img/home/explore1.png"
+    },
+    {
+      "id": 2,
+      "serviceName": "Villa",
+      "area": 500,
+      "rentalCost": "2000",
+      "maxCapacity": 6,
+      "rentalType": "Tháng",
+      "roomStandard": "Vip",
+      "amenities": "Buffet sáng",
+      "poolArea": 40,
+      "floors": 3,
+      "freeServices": "",
+      "img": "https://themewagon.github.io/seapalace/img/home/explore2.png"
+    },
+    {
+      "serviceName": "House",
+      "area": 90,
+      "rentalCost": 12,
+      "maxCapacity": 2,
+      "rentalType": "",
+      "roomStandard": "",
+      "amenities": "",
+      "poolArea": "1200",
+      "floors": 1,
+      "freeServices": "",
+      "renalType": "date",
+      "id": 3,
+      "img": "https://themewagon.github.io/seapalace/img/home/explore3.png"
+    }
   ]
 }

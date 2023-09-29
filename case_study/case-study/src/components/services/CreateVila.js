@@ -1,32 +1,33 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as Yup from 'yup'
-import { useEffect, useState } from "react";
-import { findByIdService, updateService } from "../../service/FacilityService";
+import { createService } from "../../service/FacilityService";
+import Header from "../simple/Header";
+import Footer from "../simple/Footer";
 
-function EditFacility() {
+export function CreateVilla() {
   const navigate = useNavigate();
-  const param = useParams();
-  const [facilityEdit, setfacilityEdit] = useState(null)
-  const getFacility = async () => {
-    const res = await findByIdService(param.id)
-    setfacilityEdit(res);
-  }
-  const editFacilitys = async (value) => {
-    await updateService(value)
+  const addVilla = async (value) => {
+    await createService(value)
     navigate("/service")
-  }
-  console.log(facilityEdit);
-  useEffect(() => {
-    getFacility()
-  }, [param])
-  if (facilityEdit == null) {
-    return null
   }
   return (
     <div>
+        <Header />
       <Formik
-        initialValues={facilityEdit}
+        initialValues={{
+          serviceName: "Vila",
+          area: "",
+          rentalCost: "",
+          maxCapacity: "",
+          rentalType: "",
+          roomStandaard: "",
+          amenities: "",
+          poolArea: "",
+          floors: "",
+          rentalType: "",
+          img: ""
+        }}
         validationSchema={Yup.object({
           area: Yup.number()
             .required("Area cannot is empty")
@@ -40,11 +41,12 @@ function EditFacility() {
             .min(1, "Floors should geather than 0!")
         })}
         onSubmit={(values) => {
-          editFacilitys(values)
+          addVilla(values)
         }}>
         <div className="container px-5 my-5">
           <Form id="contactForm" data-sb-form-api-token="API_TOKEN">
             <div className="form-floating mb-3">
+
               <Field
                 className="form-control"
                 id="area"
@@ -184,7 +186,7 @@ function EditFacility() {
           </Form>
         </div>
       </Formik>
+      <Footer />
     </div>
   )
 }
-export default EditFacility;

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Dropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -32,34 +34,52 @@ function Header() {
                 <div className="collapse navbar-collapse" id="navbarsExample04">
                   <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                      <a className="nav-link" href="/">
+                      <Link className="nav-link" to="/">
                         Home
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/contract/create">
+                      <Link className="nav-link" to="/contract/create">
                         New contract
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/service">
+                      <Link className="nav-link" to="/service">
                         Service
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/">
-                        Gallery
-                      </a>
+                      {/* <div className="dropdown nav-link">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                          <li><Link className="dropdown-item active" to="/service/vila">Villa</Link></li>
+                          <li><Link className="dropdown-item" to="/service/house">House</Link></li>
+                          <li><Link className="dropdown-item" to="/service/room">Room</Link></li>
+                        </ul>
+                      </div> */}
+                      <Dropdown>
+                        <Dropdown.Toggle variant="Secondary" id="dropdown-basic">
+                          Facility
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                          <Dropdown.Item><Link className="dropdown-item active" to="/service/vila">Villa</Link></Dropdown.Item>
+                          <Dropdown.Item><Link className="dropdown-item" to="/service/house">House</Link></Dropdown.Item>
+                          <Dropdown.Item><Link className="dropdown-item" to="/service/room">Room</Link></Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/contract">
+                      <Link className="nav-link" to="/contract">
                         Contract
-                      </a>
+                      </Link>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="/customer">
+                      <Link className="nav-link" to="/customer">
                         Customer
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

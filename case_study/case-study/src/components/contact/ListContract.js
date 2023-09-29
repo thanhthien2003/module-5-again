@@ -21,7 +21,6 @@ function ListContract() {
             setTotalPage(Math.ceil(res[0] / limit));
         });
     }
-
     const handleShowModal = (value) => {
         setContractDelete(value);
         setShowModal(true);
@@ -31,8 +30,8 @@ function ListContract() {
         setContractDelete({});
     }
     const handleDelete = async () => {
-        const res = await deleteContract(contractDelete);
-        setRefresh(!refresh);
+        const res = await deleteContract(contractDelete.id);
+        await getList()
         handleCloseModal();
     }
 
@@ -88,9 +87,9 @@ function ListContract() {
                                     <button className="btn btn-danger" title="Delete" onClick={() => handleShowModal(contract)}>
                                         <i className="fa-regular fa-trash-can" />
                                     </button>
-                                    <Modal show={showModal} onHide={handleCloseModal}>
+                                    {contractDelete && <Modal show={showModal} onHide={handleCloseModal}>
                                         <MyModal action={handleCloseModal} data={contractDelete} deleteFunc={handleDelete} />
-                                    </Modal>
+                                    </Modal>}
                                 </td>
                             </tr>
                         )
@@ -118,10 +117,10 @@ function MyModal({action,data,deleteFunc}){
     return(
       <>
       <Modal.Header>
-          <Modal.Title>{data.name}</Modal.Title>
+          <Modal.Title>{data.contractKey}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-          Are you sure to delete {data.name} ?
+          Are you sure to delete {data.contractKey} ?
             This action cannot be undone!
       </Modal.Body>
       <Modal.Footer>

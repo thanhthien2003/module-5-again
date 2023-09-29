@@ -11,7 +11,7 @@ function ListCustomer() {
   const [showModal,setShowModal] = useState(false);
   const [customerDelete,setCustomerDelete] = useState();
   const limit = 5;
-  const [currentPage,setCurrentPage] = useState(0);
+  const [currentPage,setCurrentPage] = useState(1);
   const [totalPage,setTotalPage] = useState();
   const [searchName,setSearchName] = useState("");
   const [refresh,setRefresh] = useState(true);
@@ -25,6 +25,7 @@ function ListCustomer() {
     setCustomerDelete({});
   }
   const getList = async (page,nameSearch) => {
+
     const newList = await findAllForName(page,limit,nameSearch);
     console.log( "currenpage"+currentPage);
     setCustomerList(newList[0]);
@@ -40,8 +41,8 @@ function ListCustomer() {
     }
 
     const nextPage = () => {
-      const totalReal = totalPage-1;
-      if(currentPage<totalReal){
+      // const totalReal = totalPage-1;
+      if(currentPage<totalPage){
         setCurrentPage(currentPage+1);
         setRefresh(!refresh);
       }
@@ -123,12 +124,12 @@ function ListCustomer() {
 
      <div style={{ whiteSpace: 'nowrap' }}>
   <div style={{ display: 'inline-block', marginRight: '10px' }}>
-    <button onClick={() => prePage()} className={`btn btn-primary ${currentPage <= 0 ? "disabled" : ""}`}>
+    <button onClick={() => prePage()} className={`btn btn-primary ${currentPage <= 1 ? "disabled" : ""}`}>
       Previous
     </button>
   </div>
   <div style={{ display: 'inline-block' }}>
-    <button onClick={() => nextPage()} className={`btn btn-primary ${currentPage >= (totalPage-1) ? "disabled" : ""}`}>
+    <button onClick={() => nextPage()} className={`btn btn-primary ${currentPage >= (totalPage) ? "disabled" : ""}`}>
       Next
     </button>
   </div>
