@@ -1,0 +1,59 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "name": "json-server",
+      "donvi": "typicode",
+      "mount": "gia",
+      "type": {
+        "id": 1,
+        "name": "some comment"
+      },
+      "dayEnd": "ngay thu hoach"
+    },
+    {
+      "name": "Thanh Thien",
+      "donvi": "32aad",
+      "mount": 2333,
+      "type": {
+        "id": 2,
+        "name": "a"
+      },
+      "dayEnd": "2023-09-29",
+      "id": 2
+    },
+    {
+      "name": "Thanh Thien",
+      "donvi": "awd",
+      "mount": 33,
+      "type": {
+        "id": 3,
+        "name": "b"
+      },
+      "dayEnd": "2023-10-06",
+      "id": 3
+    }
+  ],
+  "type": [
+    {
+      "id": 1,
+      "name": "some comment"
+    },
+    {
+      "id": 2,
+      "name": "a"
+    },
+    {
+      "id": 3,
+      "name": "b"
+    },
+    {
+      "id": 4,
+      "name": "c"
+    },
+    {
+      "id": 5,
+      "name": "d"
+    }
+  ]
+}

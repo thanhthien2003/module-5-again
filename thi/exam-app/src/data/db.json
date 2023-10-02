@@ -1,0 +1,117 @@
+{
+  "Book": [
+    {
+      "id": 1,
+      "idBook": "BO-0001",
+      "name": "Harry potter",
+      "typeBook": {
+        "id": 2,
+        "name": "Co tich"
+      },
+      "dayStart": "2023/10/05",
+      "count": 11
+    },
+    {
+      "id": 2,
+      "idBook": "BO-0002",
+      "name": "Conan",
+      "typeBook": {
+        "id": 2,
+        "name": "Co tich"
+      },
+      "dayStart": "2023/10/05",
+      "count": 12
+    },
+    {
+      "idBook": "BO-2030",
+      "name": "Phan Thanh Thiện",
+      "typeBook": {
+        "id": 3,
+        "name": "Than thoai"
+      },
+      "dayStart": "2023-10-07",
+      "count": "033",
+      "id": 3
+    },
+    {
+      "idBook": "BO-2030",
+      "name": "Phan Thanh ",
+      "typeBook": {
+        "id": 1,
+        "name": "Trinh tham"
+      },
+      "dayStart": "2023-10-07",
+      "count": "022",
+      "id": 4
+    },
+    {
+      "idBook": "BO-2030",
+      "name": "Kinh di",
+      "typeBook": {
+        "id": 3,
+        "name": "Than thoai"
+      },
+      "dayStart": "2023-10-15",
+      "count": "022",
+      "id": 5
+    },
+    {
+      "idBook": "BO-2032",
+      "name": "add",
+      "typeBook": {
+        "id": 3,
+        "name": "Than thoai"
+      },
+      "dayStart": "2023-10-14",
+      "count": "02",
+      "id": 6
+    },
+    {
+      "idBook": "BO-2030",
+      "name": "Phan Thanh ",
+      "typeBook": {
+        "id": 2,
+        "name": "Co tich"
+      },
+      "dayStart": "2023-10-27",
+      "count": "234",
+      "id": 7
+    },
+    {
+      "idBook": "BO-2032",
+      "name": "Phan Thanh ",
+      "typeBook": {
+        "id": 3,
+        "name": "Than thoai"
+      },
+      "dayStart": "2023-10-08",
+      "count": "033",
+      "id": 8
+    },
+    {
+      "idBook": "BO-2323",
+      "name": "add",
+      "typeBook": {
+        "id": 1,
+        "name": "Trinh tham"
+      },
+      "dayStart": "2023-10-08",
+      "count": "33433",
+      "id": 9
+    }
+  ],
+  "typeBook": [
+    {
+      "id": 1,
+      "name": "Trinh tham"
+    },
+    {
+      "id": 2,
+      "name": "Co tich"
+    },
+    {
+      "id": 3,
+      "name": "Than thoai"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "product": [
+    {
+      "name": "sdfsdfsdfds",
+      "pram": "sdfsdf",
+      "mount": "fsdfsdfsfsdfsdf",
+      "typeProduct": {
+        "id": 3,
+        "body": "Hoa"
+      },
+      "endDay": "2023-09-05",
+      "id": 1
+    }
+  ],
+  "typeProduct": [
+    {
+      "id": 1,
+      "body": "Rau"
+    },
+    {
+      "id": 2,
+      "body": "Cu"
+    },
+    {
+      "id": 3,
+      "body": "Hoa"
+    },
+    {
+      "id": 4,
+      "body": "Qua"
+    }
+  ]
+}

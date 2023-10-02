@@ -41,10 +41,10 @@ export const deleteCustomer = async (id) => {
 export const findAllForName = async (page,limit,searchName) => {
     try {
         const result = await axios.get(`http://localhost:8080/customer?_page=${page}&_limit=${limit}&name_like=${searchName}`)
-        // const records = result.data.totalElements;
-        const records = result.headers.get("x-total-count");
-        // const data = result.data.content;
-        const data = result.data;
+        const records = result.data.totalElements;
+        // const records = result.headers.get("x-total-count");
+        const data = result.data.content;
+        // const data = result.data;
         return [data,records,result];
     } catch (error) {
         return error;
